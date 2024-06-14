@@ -19,6 +19,7 @@ export default function Header() {
           <Nav className="mx-sm-3">
             <NavLink to="/suporte" className={getClassName}>Suporte</NavLink>
             <NavLink to="/avaliacao" className={getClassName}>Avaliação</NavLink>
+            <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                Blog 
