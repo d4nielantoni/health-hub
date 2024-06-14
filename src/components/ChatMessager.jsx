@@ -13,7 +13,7 @@ export default function ChatMessager() {
       setNewMessage("");
     }
   };
-  
+
   return (
     <Row className="mt-4">
       <Col>
@@ -46,6 +46,7 @@ export default function ChatMessager() {
                 placeholder="Digite sua mensagem..."
                 aria-label="Recipient's username"
                 aria-describedby="basic-addon2"
+                value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
               />
               <Button
