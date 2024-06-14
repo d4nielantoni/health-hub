@@ -5,23 +5,28 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/Suporte.jsx';
 import Avaliacao from './pages/Avaliacao.jsx';
+import Blog from './pages/blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
+    element: <App />,
+    children: [
       {
         path: "suporte",
-        element: <Suporte/>,
+        element: <Suporte />,
       },
       {
         path: "avaliacao",
-        element: <Avaliacao/>
+        element: <Avaliacao />
+      },
+      {
+        path: "blog",
+        element: <Blog />
       }
     ]
   },
-  
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
