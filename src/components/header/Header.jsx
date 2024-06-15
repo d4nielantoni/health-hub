@@ -22,7 +22,7 @@ export default function Header() {
             <NavLink to="/suporte" className={getClassName}>Suporte</NavLink>
             <NavLink to="/avaliacao" className={getClassName}>Avaliação</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="/blog">
                 Blog
               </NavDropdown.Item>
               <NavDropdown.Divider />
