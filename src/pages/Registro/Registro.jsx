@@ -1,8 +1,9 @@
 import { FaUser, FaLock} from "react-icons/fa";
 import { useState } from "react";
-import "./Login.css";
+import "./Registro.css";
 
-const Login = () => {
+
+export default function Registro () {
     const[username, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
@@ -13,7 +14,7 @@ const Login = () => {
   return (
     <div className="containerc container mt-5">
         <form onSubmit={handleSubmit}>
-            <h1>Acesse o sistema</h1>
+            <h1>Fazer registro</h1>
             <div className="input-field">
                 <input 
                 type="email" 
@@ -52,5 +53,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login
