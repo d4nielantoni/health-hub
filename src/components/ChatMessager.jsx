@@ -1,18 +1,72 @@
 import React from "react";
 import { useState } from "react";
 import { Row, Col, Form, Button, Card, InputGroup } from "react-bootstrap";
+import gerar_cor from "../utils/geradorCor.js";
+import supabase from "../utils/client.js";
+import Message from "./Message.jsx";
 
 export default function ChatMessager() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      mensagem: "Diga algo...",
+      usuario: "HealthHub",
+      cor_profile: "#757AF0",
+      created_at: new Date().toLocaleString(),
+    },
+  ]);
   const [newMessage, setNewMessage] = useState("");
+  const usuario = "Usuário";
+
+  async function insertData(table, updateData) {
+    const { data, error } = await supabase.from(table).insert(updateData);
+    if (error) console.log("error", error);
+  }
 
   const handleSendMessage = (e) => {
     e.preventDefault();
     if (newMessage.trim()) {
-      setMessages([...messages, newMessage]);
+      const cor_profile = gerar_cor();
+      const mensagem = `${newMessage}`;
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          usuario,
+          mensagem,
+          cor_profile,
+          created_at: new Date().toLocaleString(),
+        },
+      ]);
+      insertData("mensagens", { usuario, mensagem, cor_profile });
       setNewMessage("");
     }
   };
+
+  supabase
+    .channel("mensagens-chat")
+    .on(
+      "postgres_changes",
+      {
+        event: "INSERT",
+        schema: "public",
+        table: "mensagens",
+      },
+      (payload) => {
+        const cleanedIsoString = payload.new.created_at.replace(/\.\d+/, "");
+        const date = new Date(cleanedIsoString);
+
+        setMessages((prev) => [
+          ...prev,
+          {
+            usuario: payload.new.usuario,
+            mensagem: payload.new.mensagem,
+            cor_profile: payload.new.cor_profile,
+            created_at: date.toLocaleString(),
+          },
+        ]);
+      }
+    )
+    .subscribe();
 
   return (
     <Row className="mt-4">
@@ -34,7 +88,14 @@ export default function ChatMessager() {
               style={{ margin: "0.5rem 0" }}
             >
               <Card>
-                <Card.Body>{msg}</Card.Body>
+                <Card.Body>
+                  <Message
+                    usuario={msg.usuario}
+                    mensagem={msg.mensagem}
+                    cor_profile={msg.cor_profile}
+                    created_at={msg.created_at}
+                  />
+                </Card.Body>
               </Card>
             </div>
           ))}
