@@ -14,7 +14,9 @@ export default function Header() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary">
       <Container>
-        <NavLink to="/" className={getClassName} style={{fontSize:"1.4rem"}}>HealthHub</NavLink>
+        <NavLink to="/" className={getClassName} style={{ fontSize: "1.4rem" }}>
+          Health<span style={{ color: "red" }}>Hub</span>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-sm-3">
@@ -22,8 +24,13 @@ export default function Header() {
             <NavLink to="/avaliacao" className={getClassName}>Avaliação</NavLink>
             <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
+<<<<<<< HEAD
               <NavDropdown.Item>
                 <NavLink to="/blog" className={getClassName}>Blog</NavLink>
+=======
+              <NavDropdown.Item href="/blog">
+                Blog
+>>>>>>> 2efd3ba85538ca2b05a47d1d1b8123bb4fe86c92
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
