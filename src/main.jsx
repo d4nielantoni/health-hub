@@ -9,9 +9,11 @@ import Avaliacao from './pages/Avaliacao.jsx';
 =======
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
 >>>>>>> 8f1ef454196676e2c3c212e1e063e90fcaa2beea
+
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "avaliacao",
         element: <Avaliacao/>
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
       }
     ]
   },
