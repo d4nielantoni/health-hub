@@ -33,7 +33,7 @@ export default function Header() {
               <NavDropdown.Item>
               <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -4,67 +4,119 @@ const Recursos = () => {
   const styles = {
     container: {
       display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      margin: '20px'
-    },
-    box: {
-      flex: '1 0 45%', 
-      maxWidth: '45%',
-      height: '350px',
-      margin: '10px',
-      backgroundColor: 'lightblue',
-      display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'column', // Alinhamento vertical para incluir a nova div abaixo
       alignItems: 'center',
       justifyContent: 'center',
-      border: '1px solid #000',
-      borderRadius: '5px',
+      padding: '20px',
+      boxSizing: 'border-box',
+    },
+    topSection: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      marginBottom: '20px',
+    },
+    imageContainer: {
+      flex: '1 1 auto',
+      maxWidth: '40%',
+      padding: '10px',
+    },
+    textContainer: {
+      flex: '2 1 auto',
+      maxWidth: '60%',
+      padding: '10px',
+    },
+    image: {
+      width: '100%',
+      height: 'auto',
+      borderRadius: '8px',
     },
     title: {
-      margin: 0,
-      fontSize: '16px',
-      textAlign: 'left',
-      justifyContent: 'left' //titulos para esquerda
+      fontSize: '24px',
+      marginBottom: '10px',
     },
-    paragraph: {
-      margin: '5px 0 0 0',
-      fontSize: '14px',
-      textAlign: 'center', //
-      justifyContent:'center'
-    }
+    text: {
+      fontSize: '18px',
+    },
+    bottomSection: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      width: '100%',
+      marginTop: '20px',
+    },
+    column: {
+      flex: '1',
+      maxWidth: '45%',
+    },
+    box: {
+      marginBottom: '20px',
+      padding: '20px',
+      border: '1px solid #000',
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      textAlign: 'center',
+    },
+    link: {
+      fontSize: '18px',
+      color: 'blue',
+      textDecoration: 'none',
+    },
+    boxTitle: {
+      fontSize: '20px',
+      marginBottom: '10px',
+    },
   };
 
   return (
     <div style={styles.container}>
-      <div style={styles.box}>
-        <h3 style={styles.title}>Grupo de Apoio</h3>
-        <p style={styles.paragraph}>Você não precisa passar por isso sozinho(a). Nossa plataforma oferece grupos de 
-suporte online moderados, proporcionando um espaço seguro e acolhedor para se 
-conectar com pessoas que estão enfrentando situações semelhantes.</p>
-        <button></button> 
+      <div style={styles.topSection}>
+        <div style={styles.imageContainer}>
+          <img
+            src="https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22028_16430272124432966.jpg"
+            alt="Example"
+            style={styles.image}
+          />
+        </div>
+        <div style={styles.textContainer}>
+          <h1 style={styles.title}>Recursos</h1>
+          <p style={styles.text}>
+            Sabemos que a jornada do bem-estar emocional envolve aprendizado e autocuidado. 
+            É por isso que criamos a nossa página de Recursos, repleta de materiais educativos para te auxiliar 
+            em sua jornada.
+          </p>
+        </div>
       </div>
-      <div style={styles.box}>
-        <h3 style={styles.title}>Ferramenta de Monitoramento</h3>
-        <p style={styles.paragraph}>Autoconhecimento é fundamental para cuidar da saúde mental. Pensando nisso, 
-                                    oferecemos uma variedade de ferramentas para te ajudar a monitorar seu 
-                                    bem-estar emocional e identificar padrões ao longo do tempo.</p>
-        <button></button> 
 
-      </div>
-      <div style={styles.box}>
-        <h3 style={styles.title}>Blog de Apoio</h3>
-        <p style={styles.paragraph}>Encontre pessoas que estão em situações similiares que você, assim como você
-                                    elas estão precisando de ajuda com algum problema ou observação e sua ajuda
-                                    pode ser de extrema importância.</p>
-      </div>
-      <div style={styles.box}>
-        <h3 style={styles.title}>Sessão ao vivo</h3>
-        <p style={styles.paragraph}>Encontre pessoas que estão em situações similiares que você, assim como você
-                                    elas estão precisando de ajuda com algum problema ou observação e sua ajuda
-                                    pode ser de extrema importância.</p>
-        <button></button>
-    
+      <div style={styles.bottomSection}>
+        <div style={styles.column}>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Como Melhorar sua Saúde Mental</h2>
+            <a href="https://example.com/improving-mental-health" style={styles.link}>Leia o artigo completo</a>
+          </div>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Como Reduzir o Estresse no Trabalho</h2>
+            <a href="https://www.youtube.com/watch?v=4FT5RYuifwE" style={styles.link}>Leia o artigo completo</a>
+          </div>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Alimentação Saudável para a Mente</h2>
+            <a href="https://example.com/healthy-mind-diet" style={styles.link}>Leia o artigo completo</a>
+          </div>
+        </div>
+        <div style={styles.column}>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Meditação para Iniciantes</h2>
+            <a href="https://example.com/meditation-for-beginners" style={styles.link}>Assista ao vídeo</a>
+          </div>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Exercícios de Relaxamento</h2>
+            <a href="https://example.com/relaxation-exercises" style={styles.link}>Assista ao vídeo</a>
+          </div>
+          <div style={styles.box}>
+            <h2 style={styles.boxTitle}>Mindfulness na Prática Diária</h2>
+            <a href="https://example.com/mindfulness-daily" style={styles.link}>Assista ao vídeo</a>
+          </div>
+        </div>
       </div>
     </div>
   );
