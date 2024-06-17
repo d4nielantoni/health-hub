@@ -24,10 +24,11 @@ function ExampleCarouselImage({ src, text }) {
 
 function Blog() {
     return (
-        <Tabs
+        <Container>
+            <Tabs
             defaultActiveKey="home"
             id="uncontrolled-tab-example"
-            className="mb-3"
+            className="mb-3 mt-2"
         >
             <Tab eventKey="home" title="Novidades">
                 {/* Conteúdo da aba Home */}
@@ -175,6 +176,8 @@ function Blog() {
                 Tab content for Contact
             </Tab>
         </Tabs>
+        </Container>
+        
     );
 }
 
