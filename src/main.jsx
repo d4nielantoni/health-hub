@@ -4,8 +4,10 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "avaliacao",
         element: <Avaliacao/>
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
       }
     ]
   },
