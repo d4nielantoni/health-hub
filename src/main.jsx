@@ -8,8 +8,10 @@ import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
 import Recursos from './pages/Recursos.jsx';
 import Servicos from './pages/Servicos.jsx';
+import Login from './pages/Login/Login.jsx';
+import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
-
+import Recursos from './pages/Recursos.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,15 @@ const router = createBrowserRouter([
       },
       {
         path: "avaliacao",
-        element: <Avaliacao />
+        element: <Avaliacao/>
+      },
+      {
+        path:"login",
+        element: <Login/>
+      },
+      {
+        path:"registro",
+        element:<Registro/>
       },
       {
         path: "recursos",
@@ -36,6 +46,10 @@ const router = createBrowserRouter([
     {
         path: "blog",
         element: <Blog />
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
       }
   
     ]
