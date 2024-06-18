@@ -30,6 +30,9 @@ export default function Header() {
               <NavDropdown.Item href="/blog">
                 Blog
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink to="/blog" className={getClassName}>Blog</NavLink>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 <NavLink to="/sessoes" className={getClassName}>Sessões ao vivo</NavLink>
