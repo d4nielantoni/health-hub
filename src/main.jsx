@@ -6,6 +6,8 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
+import Recursos from './pages/Recursos.jsx';
+import Servicos from './pages/Servicos.jsx';
 import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
@@ -33,6 +35,15 @@ const router = createBrowserRouter([
         element:<Registro/>
       },
       {
+        path: "recursos",
+        element: <Recursos/>
+      },
+      {
+      path: "servicos",
+      element: <Servicos/>
+    }
+    ,
+    {
         path: "blog",
         element: <Blog />
       },
@@ -40,6 +51,7 @@ const router = createBrowserRouter([
         path: "recursos",
         element: <Recursos/>
       }
+  
     ]
   },
 

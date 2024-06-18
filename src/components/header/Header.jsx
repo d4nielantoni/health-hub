@@ -25,6 +25,7 @@ export default function Header() {
             <NavLink to="/login" className={getClassName}>Login</NavLink>
 
             <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
+            <NavLink to="/servicos" className={getClassName}>Serviços</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
               <NavDropdown.Item href="/blog">
                 Blog
