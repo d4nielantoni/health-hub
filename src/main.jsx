@@ -6,6 +6,10 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/Suporte.jsx';
 import Avaliacao from './pages/Avaliacao.jsx';
 import Home from './pages/Home.jsx';
+import Profile from './pages/Profile'
+import EditarPerfil from './pages/EditarPerfil'
+
+
 
 const router = createBrowserRouter([
   {
@@ -21,9 +25,17 @@ const router = createBrowserRouter([
         element: <Avaliacao/>
       },
       {
+        path: "profile",
+        element: <Profile/>
+      },
+      {
+        path: "editarperfil",
+        element: <EditarPerfil/>
+      },
+      {
         path: "",
         element: <Home/>
-      }
+      },
     ]
   },
   
