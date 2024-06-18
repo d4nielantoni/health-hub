@@ -1,4 +1,4 @@
-.containerc {
+/*.containerc {
     width: 450px;
     background-color: red;
     backdrop-filter: blur(10px);
@@ -108,7 +108,8 @@
     left: 12px;
     pointer-events: none;
     transition: .5s;
-}
+} 
+*/
 
 .inputUser:focus ~ .labelInput,
 .inputUser:valid ~ .labelInput{
@@ -120,7 +121,83 @@
 #data_nascimento {
     border:none;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     outline: none;
-    font-size: 15px;
+    font-size: 15px;   
+}
+
+#sexo {
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.registro {
+    padding: 2rem;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: rgba(100, 100, 111, .2) 0px 7px 29px 0px;
+}
+
+.form-container form {
+    max-width: 400px;
+    margin: 0 auto;   
+}
+
+.inputs-container {
+    min-height: 280px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+input,
+textarea {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 3px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+textarea {
+    height: 120px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.actions button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #dfdfdf;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.actions button:hover {
+    background-color: #cfcfcf;
 }

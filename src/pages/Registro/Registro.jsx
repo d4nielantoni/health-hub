@@ -1,8 +1,19 @@
-import { FaUser, FaLock} from "react-icons/fa";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import {FiSend} from 'react-icons/fi'
 import { useState } from "react";
 import "./Registro.css";
+import UserForm1 from "../../components/registro/UserForm1";
+import UserForm2 from "../../components/registro/UserForm2";
+/*import UserForm3 from "../../components/registro/UserForm3";*/
+import Thanks from "../../components/registro/Thanks";
+import Steps from "../../components/registro/Steps";
+
+import { useForm } from "../../hooks/useForm";
+
 
 export default function Registro () {
+    const formComponents = [<UserForm1 />, <UserForm2 />, <UserForm3 />, <Thanks />];
+    const{currentStep, currentComponent, changeStep, isLastStep, isFirstStep} = useForm(formComponents)
     const[username, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
@@ -11,58 +22,28 @@ export default function Registro () {
         alert("Enviando os dados:" + username + "-" + password);
     }
   return (
-    <div className="containerc container mt-9">
-        <form onSubmit={handleSubmit}>
-            <h1>Fazer registro</h1>
-            <div className="input-field">
-                <input type="text" name="nome" id="nome" className="inputUser" required/>
-                <label for="nome" className="labelInput">Nome Completo</label>
+    <div className="form-container">
+        <Steps currentStep={currentStep}/>
+        <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
+            <div className="inputs-container">{currentComponent}</div>
+            <div className="actions">
+                {!isFirstStep && (<button type="button" onClick={() => changeStep(currentStep - 1)}>
+                    <GrFormPrevious/>
+                    <span>Voltar</span>
+                </button>
+                )}
+                {!isLastStep ? (
+                    <button type="submit">
+                        <span>Avançar</span>
+                        <GrFormNext />
+                    </button> 
+                ) : (
+                    <button type="button">
+                        <span>Registrar</span>
+                        <FiSend />
+                    </button> 
+                )}
             </div>
-           <div className="input-field"> 
-                <input type="text" onChange={(e) => setUserName(e.target.value)} className="inputUser" required/>
-                <label for="email" className="labelInput">Email</label>
-           </div>
-           <div className="input-field"> 
-                <input type="password" onChange={(e) => setPassword(e.target.value)} className="inputUser" required/>
-                <label for="password" className="labelInput">Senha</label>
-           </div>
-           <div className="input-field"> 
-                <input type="tel" name="telefone" id="telefone" className="inputUser" required/>
-                <label for="telefone" className="labelInput">Telefone</label>
-           </div>
-           
-           <p>Sexo:</p>
-            <input type="radio" id="feminino" name="genero" value="feminino" required/>
-            <label for="feminino">Feminino</label>
-            <br></br>
-
-            <input type="radio" id="masculino" name="genero" value="masculino" required/>
-            <label for="masculino">Masculino</label>
-            <br></br>
-
-            <input type="radio" id="outro" name="genero" value="outro" required/>
-            <label for="outro">Outro</label>
-            <br></br>
-            
-            <label for="data_nascimento"><b>Data de Nascimento:</b></label>
-            <input type="date" name="data_nascimento" id="data_nascimento" required/>
-
-           
-           <div className="input-field"> 
-                <input type="text" name="cidade" id="cidade" className="inputUser" required/>
-                <label for="cidade" className="labelInput">Cidade</label>
-           </div>
-           
-           <div className="input-field"> 
-                <input type="text" name="estado" id="estado" className="inputUser" required/>
-                <label for="estado" className="labelInput">Estado</label>
-           </div>
-           
-           <div className="input-field"> 
-                <input type="text" name="endereco" id="endereco" className="inputUser" required/>
-                <label for="endereco" className="labelInput">Endereço</label>
-           </div>
-            
             <div className="recall-forget">
                 <label htmlFor="">
                     <input type="checkbox" />

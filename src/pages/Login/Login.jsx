@@ -11,15 +11,15 @@ const Login = () => {
         alert("Enviando os dados:" + username + "-" + password);
     }
   return (
-    <div className="containerc container mt-5">
+    <div className="form-container">
         <form onSubmit={handleSubmit}>
             <h1>Login</h1>
-            <div className="input-field">
+            <div className="form-control">
                 <input type="email" required className="inputUser" onChange={(e) => setUserName(e.target.value)}/>
                 <label for="email" className="labelInput">Email</label>
                 <FaUser className="icon" />
             </div>
-           <div className="input-field"> 
+           <div className="form-control"> 
                 <input type="password" required className="inputUser" onChange={(e) => setPassword(e.target.value)}/>
                 <label for="password" className="labelInput">Senha</label>
                 <FaLock className="icon" />
@@ -37,7 +37,7 @@ const Login = () => {
 
            <div className="signup-link">
             <p>
-                Não tem uma conta? <a href="#">Registrar</a>
+                Não tem uma conta? <a href="/registro">Registrar</a>
             </p>
            </div>
         </form>
