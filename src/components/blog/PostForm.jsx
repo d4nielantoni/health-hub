@@ -7,7 +7,7 @@ export default function PostForm() {
   const insertRecord = async (title, content) => {
     const { data, error } = await supabase
       .from("posts")
-      .insert([{ title, content, usuario: "Anônimo"}])
+      .insert([{ title, content, usuario: localStorage.getItem("user")}])
       .select();
     if (error) setError("Ocorreu um erro ao adicionar o post");
     else setError(null);

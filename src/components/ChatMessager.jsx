@@ -9,13 +9,13 @@ export default function ChatMessager() {
   const [messages, setMessages] = useState([
     {
       mensagem: "Diga algo...",
-      usuario: "HealthHub",
+      usuario: localStorage.getItem("user"),
       cor_profile: "#757AF0",
       created_at: new Date().toLocaleString(),
     },
   ]);
   const [newMessage, setNewMessage] = useState("");
-  const usuario = "Usuário";
+  const usuario = localStorage.getItem("user");
 
   async function insertData(table, updateData) {
     const { data, error } = await supabase.from(table).insert(updateData);
