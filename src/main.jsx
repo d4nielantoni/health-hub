@@ -6,6 +6,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
+import Agendamentos from './pages/sessaoAoVivo/Agendamentos.jsx';
 import Recursos from './pages/Recursos.jsx';
 import Servicos from './pages/Servicos.jsx';
 import Login from './pages/Login/Login.jsx';
@@ -27,7 +28,10 @@ const router = createBrowserRouter([
         element: <Avaliacao/>
       },
       {
-        path:"login",
+        path: "sessoes",
+        element: <Agendamentos/>
+      },
+      {path:"login",
         element: <Login/>
       },
       {
