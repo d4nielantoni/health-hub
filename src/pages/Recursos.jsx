@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Recursos = () => {
+export default function Recursos(){
   const styles = {
     container: {
       display: 'flex',
@@ -122,4 +122,3 @@ const Recursos = () => {
   );
 };
 
-export default Recursos;

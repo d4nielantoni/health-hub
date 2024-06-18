@@ -11,7 +11,7 @@ import Servicos from './pages/Servicos.jsx';
 import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
-import Recursos from './pages/Recursos.jsx';
+
 
 const router = createBrowserRouter([
   {
