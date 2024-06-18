@@ -107,8 +107,8 @@ function Blog() {
                 </div>
 
             </Tab>
-            <Tab eventKey="profile" title="Comentarios">
-                {/* Conteúdo da aba Comentarios */}
+            <Tab eventKey="comentarios" title="Comentarios">
+
                 <main>
                     <Container>
                         <Row className="mt-4">
