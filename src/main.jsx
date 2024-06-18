@@ -13,6 +13,7 @@ import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
