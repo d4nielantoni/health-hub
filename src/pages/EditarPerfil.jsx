@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import ReactDOM from 'react-dom';
-
-
+import { Container, Form, Button } from 'react-bootstrap';
 
 export default function EditarPerfil() {
   // Estados para os campos do formulário
@@ -15,7 +12,7 @@ export default function EditarPerfil() {
     event.preventDefault();
     // Aqui você pode adicionar lógica para enviar os dados do formulário
     console.log(`Dados do formulário:
-      Nome: ${firstName} ${lastName}
+      Nome: ${firstName}
       E-mail: ${email}
       Biografia: ${bio}
     `);
@@ -23,48 +20,43 @@ export default function EditarPerfil() {
   };
 
   return (
-    <Container>
-      <div className="container">
-        <h2>Perfil</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label style={{marginRight:10}} htmlFor="firstName">Nome Completo:</label>
-            <input
-              style={{borderRadius:8, borderColor:'pink'}}
-              type="text"
-              id="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label style={{marginRight:83}} htmlFor="email">E-mail:</label>
-            <input
-              style={{borderRadius:8, borderColor:'pink'}}
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label style={{marginRight:65}} htmlFor="bio">Biografia:</label>
-            <textarea
-              style={{borderRadius:8, borderColor:'pink', width:350}}
-              id="bio"
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-              rows="6"
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <button style={{borderRadius:8, backgroundColor:'pink'}} type="submit">Salvar Alterações</button>
-          </div>
-        </form>
-      </div>
-      </Container>
+    <Container className="mt-2">
+      <h2>Editar Perfil</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="firstName">
+          <Form.Label>Nome Completo:</Form.Label>
+          <Form.Control
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="Digite seu nome completo"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="email">
+          <Form.Label>E-mail:</Form.Label>
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Digite seu e-mail"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="bio">
+          <Form.Label>Biografia:</Form.Label>
+          <Form.Control
+            as="textarea"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+            rows={6}
+            placeholder="Digite sua biografia"
+          />
+        </Form.Group>
+        <Button variant="primary" className='mt-2' type="submit">
+          Salvar Alterações
+        </Button>
+      </Form>
+    </Container>
   );
-};
-
+}
