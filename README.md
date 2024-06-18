@@ -15,7 +15,7 @@ Dicas e Recomendações Personalizadas
 Front-end desenvolvido em React.js para uma interface.
 
 # Integrantes:
--Daniel Antônio
+-Daniel Antoni
 -Felipe Barradas
 -Glaúcio
 -Guilherme Cruz
