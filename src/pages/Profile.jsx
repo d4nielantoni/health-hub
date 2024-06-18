@@ -2,12 +2,14 @@ import React from 'react';
 import { Container, Row, Col, Button, Table } from 'react-bootstrap';
 
 function Profile() {
+  const user = localStorage.getItem("user")
+
   return (
     <Container className="mt-2">
       <Row className="mb-4">
         <Col>
           <h1>Perfil</h1>
-          <h2 style={{ fontSize: 15, fontWeight: 400 }}>Nome: João</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 400 }}>Nome: {user}</h2>
           <h2 style={{ fontSize: 15, fontWeight: 400 }}>Email: email</h2>
           <h2 style={{ fontSize: 15, fontWeight: 400 }}>Plano de Saúde: Unimed</h2>
         </Col>

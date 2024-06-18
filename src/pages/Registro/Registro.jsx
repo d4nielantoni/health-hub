@@ -1,57 +1,69 @@
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import {FiSend} from 'react-icons/fi'
+import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import "./Registro.css";
-import UserForm1 from "../../components/registro/UserForm1";
-import UserForm2 from "../../components/registro/UserForm2";
-/*import UserForm3 from "../../components/registro/UserForm3";*/
-import Thanks from "../../components/registro/Thanks";
-import Steps from "../../components/registro/Steps";
+import supabase from "../../utils/client.js";
+import { useNavigate } from 'react-router-dom';
 
-import { useForm } from "../../hooks/useForm";
+const Registro = () => {
+    const [username, setUserName] = useState("");
+    const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
 
-export default function Registro () {
-    const formComponents = [<UserForm1 />, <UserForm2 />, <UserForm3 />, <Thanks />];
-    const{currentStep, currentComponent, changeStep, isLastStep, isFirstStep} = useForm(formComponents)
-    const[username, setUserName] = useState("");
-    const[password, setPassword] = useState("");
+    async function signUpNewUser() {
+        await supabase.auth.signUp({
+            email: username,
+            password: password,
+          })
+        localStorage.setItem("user", username.split("@")[0]);
+        navigate("/")
+      }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("Enviando os dados:" + username + "-" + password);
+        signUpNewUser()
     }
-  return (
-    <div className="form-container">
-        <Steps currentStep={currentStep}/>
-        <form onSubmit={(e) => changeStep(currentStep + 1, e)}>
-            <div className="inputs-container">{currentComponent}</div>
-            <div className="actions">
-                {!isFirstStep && (<button type="button" onClick={() => changeStep(currentStep - 1)}>
-                    <GrFormPrevious/>
-                    <span>Voltar</span>
-                </button>
-                )}
-                {!isLastStep ? (
-                    <button type="submit">
-                        <span>Avançar</span>
-                        <GrFormNext />
-                    </button> 
-                ) : (
-                    <button type="button">
-                        <span>Registrar</span>
-                        <FiSend />
-                    </button> 
-                )}
-            </div>
-            <div className="recall-forget">
-                <label htmlFor="">
-                    <input type="checkbox" />
-                    Lembre de mim?
-                </label>
-            </div>
-           <button>Registrar</button>
-        </form>
-    </div>
-  )
+    return (
+        <div className="form-container mt-5">
+            <form onSubmit={handleSubmit}>
+                <h1 style={{textAlign:"center"}}>Registro</h1>
+                <div className="form-control" style={{boxShadow:"none", border:"none"}}>
+                    <div style={{display:"flex", gap:5,alignItems:"center"}}>
+                        <label htmlFor="email" className="labelInput">Nome completo</label>
+                        <FaUser className="icon" />
+                    </div>
+
+                    <input type="text" name="name" required className="inputUser" onChange={(e) => setUserName(e.target.value)} />
+
+                </div>
+                <div className="form-control" style={{boxShadow:"none", border:"none"}}>
+                    <div style={{display:"flex", gap:5,alignItems:"center"}}>
+                        <label htmlFor="email" className="labelInput">Email</label>
+                        <FaUser className="icon" />
+                    </div>
+
+                    <input type="email" name="email" required className="inputUser" onChange={(e) => setUserName(e.target.value)} />
+
+                </div>
+                <div className="form-control" style={{boxShadow:"none", border:"none"}}>
+                    <div style={{display:"flex", gap:5,alignItems:"center"}}>
+                        <label htmlFor="password" className="labelInput">Senha</label>
+                        <FaLock className="icon" />
+                    </div>
+                    <input type="password" name="password" required className="inputUser" onChange={(e) => setPassword(e.target.value)} />
+
+                </div>
+
+                <button>Criar</button>
+
+                <div className="signup-link">
+                    <p>
+                        Não tem uma conta? <a href="/login">login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    )
 }
+
+export default Registro

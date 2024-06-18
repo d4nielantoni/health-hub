@@ -15,6 +15,7 @@ import bem from '../assets/bem.png';
 
 
 function Home() {
+
   return (
     <>
     <Navbar style={{backgroundColor:"#FF6666", height: 100}} >

@@ -4,7 +4,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import ChatMessager from "../../components/ChatMessager";
 import Posts from '../../components/blog/Posts';
 //import styles from './blog.module.css';
 import './blog.module.css'
@@ -116,70 +115,11 @@ function Blog() {
 
                 </Tab>
                 <Tab eventKey="profile" title="Comentarios">
-                    {/* Conteúdo da aba Comentarios */}
-                    <main>
-                        <Container>
-                            <Row className="mt-4">
-                                <Col lg={7}>
-                                    <h1>Chat da comunidade</h1>
-                                    <p>
-                                        Além dos recursos e informações disponíveis em nosso site, nós
-                                        também oferecemos suporte personalizado através do chat ao vivo.
-                                    </p>
-                                    <p>
-                                        Não Enfrente Sozinho(a): Converse Agora com Nossos Conselheiros e
-                                        Voluntários pelo Chat Ao Vivo! Sabemos que lidar com questões de
-                                        saúde mental pode ser desafiador. É por isso que oferecemos
-                                        suporte imediato e confidencial através do chat ao vivo com
-                                        conselheiros treinados e voluntários atenciosos.
-                                    </p>
-                                    <Row>
-                                        <Col>
-                                            <Card
-                                                body
-                                                style={{ backgroundColor: "rgba(92, 92, 252, 0.397)" }}
-                                            >
-                                                Esclarecer dúvidas sobre saúde mental.
-                                            </Card>
-                                        </Col>
-                                        <Col>
-                                            <Card
-                                                body
-                                                style={{ backgroundColor: "rgba(92, 207, 252, 0.397)" }}
-                                            >
-                                                Oferecer apoio emocional inicial.
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                    <Row className="mt-3">
-                                        <Col>
-                                            <Card
-                                                body
-                                                style={{ backgroundColor: "rgba(92, 252, 113, 0.397)" }}
-                                            >
-                                                Orientar sobre os recursos mais adequados para sua situação.
-                                            </Card>
-                                        </Col>
-                                        <Col>
-                                            <Card
-                                                body
-                                                style={{ backgroundColor: "rgba(217, 252, 92, 0.397)" }}
-                                            >
-                                                Reduzir o sentimento de isolamento e te conectar com alguém
-                                                que te compreende.
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col lg={3} className="mt-3 d-flex">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkQz8cLKTe5VC5YpuZ-o73_ecUMgeEBXO_Bw&s" alt="fotinha" />
-                                </Col>
-                            </Row>
-                            <hr className="mt-5" />
-                            <ChatMessager />
-                        </Container>
-                    </main>
+                <Posts></Posts>
                 </Tab>
+                <Tab eventKey="minhasPostagens" title="Minhas postagens">
+                <PostagensForm/>
+            </Tab>
                 <Tab eventKey="contact" title="Contato">
                     {/*Aba de Contato*/}
                     <div style={{ margin: '30px' }}>
