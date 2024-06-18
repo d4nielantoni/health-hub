@@ -12,6 +12,7 @@ import Servicos from './pages/Servicos.jsx';
 import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
+import Satisfaction from './pages/satisfaction/Satisfaction.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "avaliacao",
         element: <Avaliacao/>
+      },
+      {
+        path: "satisfaction",
+        element: <Satisfaction/>
       },
       {
         path: "sessoes",

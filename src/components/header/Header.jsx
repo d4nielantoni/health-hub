@@ -24,6 +24,7 @@ export default function Header() {
             <NavLink to="/suporte" className={getClassName}>Suporte</NavLink>
             <NavLink to="/avaliacao" className={getClassName}>Avaliação</NavLink>
             <NavLink to="/login" className={getClassName}>Login</NavLink>
+            <NavLink to="/satisfaction" className={getClassName}>Satisfação</NavLink>
 
             <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
             <NavLink to="/servicos" className={getClassName}>Serviços</NavLink>
