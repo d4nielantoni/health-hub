@@ -92,28 +92,28 @@ const Recursos = () => {
         <div style={styles.column}>
           <div style={styles.box}>
             <h2 style={styles.boxTitle}>Como Melhorar sua Saúde Mental</h2>
-            <a href="https://example.com/improving-mental-health" style={styles.link}>Leia o artigo completo</a>
+            <a href="http://pepsic.bvsalud.org/scielo.php?script=sci_arttext&pid=S1806-69762018000200007" style={styles.link}>Leia o artigo completo</a>
           </div>
           <div style={styles.box}>
             <h2 style={styles.boxTitle}>Como Reduzir o Estresse no Trabalho</h2>
-            <a href="https://www.youtube.com/watch?v=4FT5RYuifwE" style={styles.link}>Leia o artigo completo</a>
+            <a href="https://www.scielo.br/j/reeusp/a/QfTCHCJQHLYQBZ7wC8wZ9sK/?format=pdf&lang=pt" style={styles.link}>Leia o artigo completo</a>
           </div>
           <div style={styles.box}>
             <h2 style={styles.boxTitle}>Alimentação Saudável para a Mente</h2>
-            <a href="https://example.com/healthy-mind-diet" style={styles.link}>Leia o artigo completo</a>
+            <a href="https://www.nucleodoconhecimento.com.br/saude/saude-mental-no-brasil" style={styles.link}>Leia o artigo completo</a>
           </div>
         </div>
         <div style={styles.column}>
           <div style={styles.box}>
-            <h2 style={styles.boxTitle}>Meditação para Iniciantes</h2>
-            <a href="https://example.com/meditation-for-beginners" style={styles.link}>Assista ao vídeo</a>
+            <h2 style={styles.boxTitle}>Vamos falar sobre saúde mental?</h2>
+            <a href="https://www.youtube.com/watch?v=UU-bd1lj3Kg" style={styles.link}>Assista ao vídeo</a>
           </div>
           <div style={styles.box}>
-            <h2 style={styles.boxTitle}>Exercícios de Relaxamento</h2>
-            <a href="https://example.com/relaxation-exercises" style={styles.link}>Assista ao vídeo</a>
+            <h2 style={styles.boxTitle}>Como Gerenciar Sua Saúde Mental</h2>
+            <a href="https://www.youtube.com/watch?v=rkZl2gsLUp4" style={styles.link}>Assista ao vídeo</a>
           </div>
           <div style={styles.box}>
-            <h2 style={styles.boxTitle}>Mindfulness na Prática Diária</h2>
+            <h2 style={styles.boxTitle}>4 DICAS PARA MELHORAR SUA SAÚDE MENTAL</h2>
             <a href="https://example.com/mindfulness-daily" style={styles.link}>Assista ao vídeo</a>
           </div>
         </div>
