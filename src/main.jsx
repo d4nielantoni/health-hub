@@ -6,9 +6,13 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
+import Agendamentos from './pages/sessaoAoVivo/Agendamentos.jsx';
+import Recursos from './pages/Recursos.jsx';
+import Servicos from './pages/Servicos.jsx';
 import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
+import Satisfaction from './pages/satisfaction/Satisfaction.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,7 +29,14 @@ const router = createBrowserRouter([
         element: <Avaliacao/>
       },
       {
-        path:"login",
+        path: "satisfaction",
+        element: <Satisfaction/>
+      },
+      {
+        path: "sessoes",
+        element: <Agendamentos/>
+      },
+      {path:"login",
         element: <Login/>
       },
       {
@@ -33,9 +44,23 @@ const router = createBrowserRouter([
         element:<Registro/>
       },
       {
+        path: "recursos",
+        element: <Recursos/>
+      },
+      {
+      path: "servicos",
+      element: <Servicos/>
+    }
+    ,
+    {
         path: "blog",
         element: <Blog />
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
       }
+  
     ]
   },
 

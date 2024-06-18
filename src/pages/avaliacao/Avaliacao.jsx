@@ -1,6 +1,6 @@
 import AlertDismissible from "../../components/AlertDismissible";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 export default function Avaliacao() {
   const [show, setShow] = useState(false);
@@ -13,7 +13,8 @@ export default function Avaliacao() {
   };
 
   return (
-    <main className="container mt-3">
+    <Container>
+       <main className="container mt-3">
       <AlertDismissible
         show={show}
         setShow={setShow}
@@ -70,5 +71,6 @@ export default function Avaliacao() {
         </button>
       </form>
     </main>
+    </Container>
   );
 }
