@@ -5,9 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import ChatMessager from "../../components/ChatMessager";
-
+import Posts from '../../components/blog/Posts';
 //import styles from './blog.module.css';
 import './blog.module.css'
+import PostagensForm from '../../components/blog/PostagensForm';
 
 function ExampleCarouselImage({ src, text }) {
     return (

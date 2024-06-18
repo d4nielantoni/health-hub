@@ -1,0 +1,45 @@
+.main  {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  #sessao {
+    background-color: white;
+    margin: 10px 100px 10px 100px;
+    padding: 30px 1px 1px 75px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.1);
+  }
+  #texto1{
+    margin: 10px 5px 0px 45px;
+    padding: 30px 1px 1px 75px;
+  }
+  #texto2 {
+    color: #333;
+    left:auto;
+    font-style: italic;
+  }
+  
+  #botao {
+    background-color: #d81f1f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: -95px;
+    left: 600px;
+  }
+  
+  #botao:hover {
+    background-color: #730000;
+  }
+  #cartao{
+    background-color: white;
+    margin: 100px 350px 50px 350px;
+    padding: 30px 1px 1px 75px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 7px rgba(0,0,0,0.1);
+    text-align: -webkit-center;
+  }
