@@ -13,23 +13,15 @@ const Login = () => {
   return (
     <div className="containerc container mt-5">
         <form onSubmit={handleSubmit}>
-            <h1>Acesse o sistema</h1>
+            <h1>Login</h1>
             <div className="input-field">
-                <input 
-                type="email" 
-                placeholder='E-mail' 
-                required
-                onChange={(e) => setUserName(e.target.value)}
-                />
+                <input type="email" required className="inputUser" onChange={(e) => setUserName(e.target.value)}/>
+                <label for="email" className="labelInput">Email</label>
                 <FaUser className="icon" />
             </div>
            <div className="input-field"> 
-                <input 
-                type="password" 
-                placeholder='Senha'
-                required 
-                onChange={(e) => setPassword(e.target.value)}
-                />
+                <input type="password" required className="inputUser" onChange={(e) => setPassword(e.target.value)}/>
+                <label for="password" className="labelInput">Senha</label>
                 <FaLock className="icon" />
            </div>
 
