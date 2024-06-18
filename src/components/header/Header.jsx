@@ -3,17 +3,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import style from "./header.module.css"
-
+import "./header.css";
 
 export default function Header() {
   function getClassName({ isActive, isPending }) {
     return isPending ? "nav-link" : (isActive ? "nav-link active" : "nav-link");
   }
 
+
+
   return (
-    <Navbar expand="sm" className="bg-body-tertiary">
-      <Container>
+    <Navbar expand="sm" className="d-flex justify-content-start align-items-center">
+      <Container id='nav'>
         <NavLink to="/" className={getClassName} style={{ fontSize: "1.4rem" }}>
           Health<span style={{ color: "red" }}>Hub</span>
         </NavLink>
@@ -27,8 +28,8 @@ export default function Header() {
             <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
             <NavLink to="/servicos" className={getClassName}>Serviços</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/blog">
-                Blog
+              <NavDropdown.Item>
+                <NavLink to="/blog" className={getClassName}>Blog</NavLink>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>

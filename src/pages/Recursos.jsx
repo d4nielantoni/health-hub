@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 export default function Recursos(){
   const styles = {
@@ -69,7 +70,8 @@ export default function Recursos(){
   };
 
   return (
-    <div style={styles.container}>
+    <Container>
+      <div style={styles.container}>
       <div style={styles.topSection}>
         <div style={styles.imageContainer}>
           <img
@@ -119,6 +121,7 @@ export default function Recursos(){
         </div>
       </div>
     </div>
+    </Container>
   );
 };
 
