@@ -17,7 +17,7 @@ export default function Agendamentos () {
     return (
         <main id="main">
             <h1 id="texto1">Experimente marcar uma consulta 100% online com algum de nossos renomados e confiáveis profisionais.</h1>
-            <section id="sessao">
+            <section id="sessao" className="mt-4">
                 <h5 id="texto2">Neurologista</h5><h6 id="texto2">Dr. Victor Frankenstein</h6>
                 <p>Disponível 20/06/2024 às 14:45</p>
                 <button id="botao"onClick={()=>toggleAgendamento('botao1')}>{agendado.botao1 ? 'Cancelar Consulta' : 'Agendar Consulta Online'}</button>
@@ -34,7 +34,7 @@ export default function Agendamentos () {
             </section>
             <div id="cartao">
                 <h3>Participe de sua Próxima Sessão Agendada </h3>   
-                <a id="botão" href="https://meet.google.com/kmj-wyrh-dek" target="_blank"><button style={{background:"#d81f1f", color:"white"}}> Clique Aqui </button></a>
+                <a id="botão" href="https://meet.google.com/kmj-wyrh-dek" target="_blank" style={{padding:20}}><button style={{background:"#d81f1f", color:"white", border: "none", borderRadius: 5, marginBottom: 15}}> Clique Aqui </button></a>
             </div>
         </main>
     );

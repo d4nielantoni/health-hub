@@ -4,6 +4,14 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+
+import Home from './pages/Home.jsx';
+import Profile from './pages/Profile'
+import EditarPerfil from './pages/EditarPerfil'
+
+
+
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
 import Agendamentos from './pages/sessaoAoVivo/Agendamentos.jsx';
@@ -13,6 +21,7 @@ import Login from './pages/Login/Login.jsx';
 import Registro from './pages/Registro/Registro.jsx';
 import Blog from './pages/blog/Blog.jsx';
 import Satisfaction from './pages/satisfaction/Satisfaction.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -36,7 +45,20 @@ const router = createBrowserRouter([
         path: "sessoes",
         element: <Agendamentos/>
       },
-      {path:"login",
+      {
+        path: "profile",
+        element: <Profile/>
+      },
+      {
+        path: "editarperfil",
+        element: <EditarPerfil/>
+      },
+      {
+        path: "",
+        element: <Home/>
+      },
+      {
+        path:"login",
         element: <Login/>
       },
       {
