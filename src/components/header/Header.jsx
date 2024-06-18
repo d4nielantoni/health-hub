@@ -14,15 +14,21 @@ export default function Header() {
   return (
     <Navbar expand="sm" className="bg-body-tertiary">
       <Container>
-        <NavLink to="/" className={getClassName} style={{fontSize:"1.4rem"}}>HealthHub</NavLink>
+        <NavLink to="/" className={getClassName} style={{ fontSize: "1.4rem" }}>
+          Health<span style={{ color: "red" }}>Hub</span>
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-sm-3">
             <NavLink to="/suporte" className={getClassName}>Suporte</NavLink>
             <NavLink to="/avaliacao" className={getClassName}>Avaliação</NavLink>
+            <NavLink to="/login" className={getClassName}>Login</NavLink>
+
+            <NavLink to="/recursos" className={getClassName}>Recursos</NavLink>
+            <NavLink to="/servicos" className={getClassName}>Serviços</NavLink>
             <NavDropdown title="Serviços" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <NavLink to="/blog" className={getClassName}>Blog</NavLink>
+              <NavDropdown.Item href="/blog">
+                Blog
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>

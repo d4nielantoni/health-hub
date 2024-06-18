@@ -7,15 +7,20 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
 import Agendamentos from './pages/sessaoAoVivo/Agendamentos.jsx';
+import Recursos from './pages/Recursos.jsx';
+import Servicos from './pages/Servicos.jsx';
+import Login from './pages/Login/Login.jsx';
+import Registro from './pages/Registro/Registro.jsx';
+import Blog from './pages/blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
+    element: <App />,
+    children: [
       {
         path: "suporte",
-        element: <Suporte/>,
+        element: <Suporte />,
       },
       {
         path: "avaliacao",
@@ -24,10 +29,35 @@ const router = createBrowserRouter([
       {
         path: "sessoes",
         element: <Agendamentos/>
+      },
+      {path:"login",
+        element: <Login/>
+      },
+      {
+        path:"registro",
+        element:<Registro/>
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
+      },
+      {
+      path: "servicos",
+      element: <Servicos/>
+    }
+    ,
+    {
+        path: "blog",
+        element: <Blog />
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
       }
+  
     ]
   },
-  
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
