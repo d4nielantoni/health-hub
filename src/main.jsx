@@ -8,19 +8,21 @@ import Suporte from './pages/suporte/Suporte.jsx';
 import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
 import Recursos from './pages/Recursos.jsx';
 import Servicos from './pages/Servicos.jsx';
+import Blog from './pages/blog/Blog.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
+    element: <App />,
+    children: [
       {
         path: "suporte",
-        element: <Suporte/>,
+        element: <Suporte />,
       },
       {
         path: "avaliacao",
-        element: <Avaliacao/>
+        element: <Avaliacao />
       },
       {
         path: "recursos",
@@ -30,9 +32,13 @@ const router = createBrowserRouter([
       path: "servicos",
       element: <Servicos/>
     }
+    {
+        path: "blog",
+        element: <Blog />
+      }
     ]
   },
-  
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
