@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 
 
@@ -22,44 +23,48 @@ export default function EditarPerfil() {
   };
 
   return (
-    <div className="container">
-      <h2>Formulário de Edição de Perfil</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="firstName">Nome Completo:</label>
-          <input
-            
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">E-mail:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="bio">Biografia:</label>
-          <textarea
-            id="bio"
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-            rows="4"
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <button type="submit">Salvar Alterações</button>
-        </div>
-      </form>
-    </div>
+    <Container>
+      <div className="container">
+        <h2>Perfil</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label style={{marginRight:10}} htmlFor="firstName">Nome Completo:</label>
+            <input
+              style={{borderRadius:8, borderColor:'pink'}}
+              type="text"
+              id="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label style={{marginRight:83}} htmlFor="email">E-mail:</label>
+            <input
+              style={{borderRadius:8, borderColor:'pink'}}
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label style={{marginRight:65}} htmlFor="bio">Biografia:</label>
+            <textarea
+              style={{borderRadius:8, borderColor:'pink', width:350}}
+              id="bio"
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+              rows="6"
+            ></textarea>
+          </div>
+          <div className="form-group">
+            <button style={{borderRadius:8, backgroundColor:'pink'}} type="submit">Salvar Alterações</button>
+          </div>
+        </form>
+      </div>
+      </Container>
   );
 };
 
