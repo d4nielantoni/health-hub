@@ -45,8 +45,7 @@ const router = createBrowserRouter([
         path: "sessoes",
         element: <Agendamentos/>
       },
-      {path:"login",
-
+      {
         path: "profile",
         element: <Profile/>
       },
