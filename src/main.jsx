@@ -2,23 +2,32 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css";
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Suporte from './pages/Suporte.jsx';
-import Avaliacao from './pages/Avaliacao.jsx';
+
+
 import Home from './pages/Home.jsx';
 import Profile from './pages/Profile'
 import EditarPerfil from './pages/EditarPerfil'
 
 
 
+import Suporte from './pages/suporte/Suporte.jsx';
+import Avaliacao from './pages/avaliacao/Avaliacao.jsx';
+import Login from './pages/Login/Login.jsx';
+import Registro from './pages/Registro/Registro.jsx';
+import Blog from './pages/blog/Blog.jsx';
+import Recursos from './pages/Recursos.jsx';
+
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
+    element: <App />,
+    children: [
       {
         path: "suporte",
-        element: <Suporte/>,
+        element: <Suporte />,
       },
       {
         path: "avaliacao",
@@ -36,9 +45,24 @@ const router = createBrowserRouter([
         path: "",
         element: <Home/>
       },
+        {path:"login",
+        element: <Login/>
+      },
+      {
+        path:"registro",
+        element:<Registro/>
+      },
+      {
+        path: "blog",
+        element: <Blog />
+      },
+      {
+        path: "recursos",
+        element: <Recursos/>
+      }
     ]
   },
-  
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

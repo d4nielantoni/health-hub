@@ -6,12 +6,13 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import EditarPerfil from './pages/EditarPerfil'
 
+
 function App() {
 
   return (
     <>
       <Header/>
-        <Outlet/>
+      <Outlet/>
       <Footer/>
     </>
   )
